@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class RectanglePerimeter {
+   public static void main(String args[]) {
+      float a ,b, perimeter;
+      System.out.println("Required packages have been imported");
+      Scanner my_scanner = new Scanner(System.in);
+      System.out.println("A Scanner object has been defined ");
+      System.out.print("Enter the length of first side : ");
+      a = my_scanner.nextFloat();
+      System.out.print("Enter the length of second side : ");
+      b = my_scanner.nextFloat();
+      
+     
+      perimeter = 2*(a + b);
+      System.out.printf("\nThe perimeter of Rectangle is: %.2f", perimeter);
+   }
+}

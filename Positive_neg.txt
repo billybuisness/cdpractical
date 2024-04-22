@@ -1,0 +1,31 @@
+run lex file
+
+vi filename.lex
+lex filename.lex
+cc lex.yy.c -lfl
+./a.out
+
+%{
+#include <stdio.h>
+%}
+
+%%
+[+-]?[0-9]+     { printf("%s is ", yytext);
+                  int num = atoi(yytext);
+                  if (num > 0)
+                      printf("positive\n");
+                  else if (num < 0)
+                      printf("negative\n");
+                  else
+                      printf("neither positive nor negative\n");
+                }
+.|\n            ;
+
+%%
+int yywrap(){}
+
+int main() {
+    yylex();
+    return 0;
+}
+
